@@ -15,9 +15,10 @@ manager = Manager(app)
 
 #manager.add_command("shell", Shell(make_context=make_shell_context))
 
-#@manager.command
-#def syncdb():
+@manager.command
+def syncdb():
     #db.create_all()
+    pass
 
 @manager.command
 def runserver():
