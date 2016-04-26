@@ -24,9 +24,11 @@ def syncdb():
 def runserver():
     #socketio.run(app, "0.0.0.0", port=5001)
     app.run()
-"""
+
 @manager.command
 def create_wizard(name, password):
+    pass
+"""
     try:
         db.session.add(Wizard(name, password))
         db.session.commit()
