@@ -47,7 +47,8 @@ def clear_redis():
     redis_cli.delete('more')
     redis_cli.delete('yes')
     redis_cli.delete('no')
-"""
+
 if __name__ == '__main__':
     app.run()
+"""
 
