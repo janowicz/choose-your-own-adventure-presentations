@@ -4,7 +4,9 @@ monkey.patch_all()
 import os
 import redis
 
-from cyoa import app #, redis_db, socketio, db
+from cyoa import app 
+
+#, redis_db, socketio, db
 
 #from cyoa.models import Wizard
 #from flask.ext.script import Manager#, Shell
@@ -47,5 +49,5 @@ def clear_redis():
     redis_cli.delete('no')
 """
 if __name__ == '__main__':
-    manager.run()
+    app.run()
 
