@@ -4,25 +4,26 @@ monkey.patch_all()
 import os
 import redis
 
-from cyoa import app, redis_db, socketio, db
-from cyoa.models import Wizard
-from flask.ext.script import Manager, Shell
+from cyoa import app#, redis_db, socketio, db
 
+#from cyoa.models import Wizard
+from flask.ext.script import Manager#, Shell
 manager = Manager(app)
 
-def make_shell_context():
-    return dict(app=app, redis_db=redis_db, db=db, Wizard=Wizard)
+#def make_shell_context():
+ #   return dict(app=app, redis_db=redis_db, db=db, Wizard=Wizard)
 
-manager.add_command("shell", Shell(make_context=make_shell_context))
+#manager.add_command("shell", Shell(make_context=make_shell_context))
 
-@manager.command
-def syncdb():
-    db.create_all()
+#@manager.command
+#def syncdb():
+    #db.create_all()
 
 @manager.command
 def runserver():
-    socketio.run(app, "0.0.0.0", port=5001)
-
+    #socketio.run(app, "0.0.0.0", port=5001)
+    app.run()
+"""
 @manager.command
 def create_wizard(name, password):
     try:
@@ -39,7 +40,7 @@ def clear_redis():
     redis_cli.delete('more')
     redis_cli.delete('yes')
     redis_cli.delete('no')
-
+"""
 if __name__ == '__main__':
     manager.run()
 

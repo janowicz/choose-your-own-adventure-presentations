@@ -14,7 +14,7 @@ from .models import Wizard, Decision
 from . import app, redis_db, socketio, login_manager
 from .models import Presentation
 
-client = TwilioRestClient()
+#client = TwilioRestClient()
 
 @login_manager.user_loader
 def load_user(userid):
